@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Index of task</h1>
+</div>
+<% var taskSum=0.0 %>
+<% tasks.forEach(function (task) { 
+taskSum = taskSum+parseFloat(task.reward) %>
+<div class="row">
+  <div class="span4">
+    <%- link_to(task.title, path_to.edit_task(task)) %>  
+  </div>
+  <div class="span4">
+    <%- task.reward %>  
+  </div>
+  <div class="span4">
+    <%- task.date %>  
+  </div>
+  <div class="span4">
+    <%- link_to('Delete', path_to.task(task), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
+  </div>
+</div>
+<% }); %>
+
+
+<hr/>
+
+<div class="well">
+  Total reward <%-taskSum %>
+</div>
+<hr/>
+
+<div class="well">
+  <%- link_to('New task', path_to.new_task, {class: 'btn'}) %>
+</div>

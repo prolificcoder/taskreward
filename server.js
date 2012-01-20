@@ -1,5 +1,10 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\nApp (taskreward) is running..');
-}).listen(13395);
+#!/usr/bin/env node
+
+var app = module.exports = require('railway').createServer();
+
+if (!module.parent) {
+    var port = process.env.PORT || 13395 
+    app.listen(port);
+    console.log("Railway server listening on port %d within %s environment", port, app.settings.env);
+}
+

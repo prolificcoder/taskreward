@@ -1,0 +1,10 @@
+{ "development":
+  { "driver":   "redis"
+  , "host":	"dogfish.redistogo.com"
+  , "port":	9386
+  , "password":     "56d30157e6414cd9e33b15acfc818aa1"
+  }
+, "test":
+  { "driver":   "memory"
+  }
+}

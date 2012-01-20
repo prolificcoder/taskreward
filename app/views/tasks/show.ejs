@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>Details of task</h1>
+</div>
+
+<div about="<%= path_to.task(task) %>">
+  <div property="title"><%= task.title %></div>
+  <div property="owner"><%= task.owner %></div>
+  <div property="reward"><%= task.reward %></div>
+  <div property="date"><%= task.date %></div>
+</div>
+
+<div class="actions">
+  <%- link_to('Edit', path_to.edit_task(task), {class: 'btn primary'}) %>
+  <%- link_to('Delete', path_to.task(task), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+  or
+  <%- link_to('Back to index', path_to.tasks) %>
+</div>
